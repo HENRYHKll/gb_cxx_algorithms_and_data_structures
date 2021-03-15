@@ -16,6 +16,6 @@ int main(int argc, char** args)
 ```
 ## 2. Визуальное описание алгоритма умножения двух чисел
 
-![Иллюстрация к проекту](https://github.com/HENRYHKll/gb_cxx_algorithms_and_data_structures/tree/lesson2/lesson2/aads2-2.png)
+![Иллюстрация к проекту](https://github.com/HENRYHKll/gb_cxx_algorithms_and_data_structures/blob/lesson2/lesson2/aads2-2.png)
 
 ## 3. done 
