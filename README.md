@@ -1,1 +1,1 @@
-# gb_cxx_algorithms_and_data_structures
+# Алгоритмы и структуры данных C++ GeekBrains
