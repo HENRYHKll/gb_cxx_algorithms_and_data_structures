@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18)
+
+project(GB-cxx-algorithms_and_data_structures)
+
+add_subdirectory(lesson2)
+
+
