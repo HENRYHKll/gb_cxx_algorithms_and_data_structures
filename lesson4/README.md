@@ -1,42 +1,93 @@
 # Урок 3. Сложность алгоритма и простые алгоритмы
-- 1.Написать функцию проверки, является ли число простым
-- 1.1.Блок-схему
-- 1.2.В коде на языке С/C++
-- 2.При помощи инструментов визуализации алгоритмов создать простую блок-схему, описывающую алгоритм сложения чисел от [1] до [10]
+- 1.Реализовать функцию перевода чисел из десятичной системы в двоичную, используя рекурсию.
+- 2.Реализовать функцию возведения числа [a] в степень [b]:
+- a) Рекурсивно.
+- b) Рекурсивно, используя свойство чётности степени (то есть, если степень, в которую нужно возвести число, чётная, основание возводится в квадрат, а показатель делится на два, а если степень нечётная - результат умножается на основание, а показатель уменьшается на единицу)
+- 3.Реализовать нахождение количества маршрутов шахматного короля с препятствиями (где единица - это наличие препятствия, а ноль - свободная для хода клетка)
 
-Результатом домашней работы должны стать три файла - две картинки с блок-схемами и одна программа на языке С/C++.
-
-## 1. Code является ли число простым
-# 1.1.Блок-схему
-
-![Иллюстрация к проекту](https://github.com/HENRYHKll/gb_cxx_algorithms_and_data_structures/blob/lesson3/lesson3/aads3-1.png)
+Результатом работы должен стать один файл с кодом на языке С, содержащий функцию main и четыре функции, соответствующие каждому из заданий.
 
 
-# 1.2.В коде на языке С/C++
 
+## 1. Реализовать функцию перевода чисел из десятичной системы в двоичную, используя рекурсию
 ```sh
-#include <iostream>
+void recDectoBin(int n)
+{
+    if (n < 0)
+    {
+        std::cout << "-";
+        recDectoBin(-n);
+    }
+    else if (n < 2)
+    {
+        std::cout << n;
+        return;
+    }
+    else
+    {
+        recDectoBin(n / 2);
+        int res = n % 2;
+        std::cout << res;
+    }
+}
 
-int main(int argc, char** args)
+void ConvertDecToBin()
 {
     int n = 0;
-    std::cout << "enter number" << std::endl;
+    std::cout << "Convert nuber" << std::endl;
     std::cin >> n;
-
-    for (int i = 2; i < n; i++)
-    {
-        if (n % i == 0)
-        {
-            std::cout << n << " number is not prime, because to divide by " << i
-                      << std::endl;
-            return 0;
-        }
-    }
-    std::cout << n << " number is prime" << std::endl;
-    return 0;
+    std::cout << "Convert to bin = ";
+    recDectoBin(n);
+    std::cout << std::endl;
 }
 
 ```
-## 2. Блок-схема, описывающая алгоритм сложения чисел от [1] до [10]
 
-![Иллюстрация к проекту](https://github.com/HENRYHKll/gb_cxx_algorithms_and_data_structures/blob/lesson3/lesson3/aads3-2.png)
+## 2. Реализовать функцию возведения числа [a] в степень [b]:
+
+```sh
+void exponentiation()
+{
+    int a = 0, b = 0;
+    std::cout << "Enter nuber Exponentiation" << std::endl;
+    std::cin >> a;
+    std::cout << "to the level" << std::endl;
+    std::cin >> b;
+    std::cout << "Bin Exponentiation = " << binExponentiation(a, b)
+              << std::endl;
+    std::cout << "Rec Exponentiation = " << recExponentiation(a, b)
+              << std::endl;
+}
+
+```
+
+# a) Рекурсивно.
+
+```sh
+int recExponentiation(int a, int b)
+{
+    if (b == 0)
+        return 1;
+    else
+        return a * recExponentiation(a, b - 1);
+}
+```
+
+# b) Рекурсивно, используя свойство чётности степени
+
+```sh
+int binExponentiation(int a, int b)
+{
+    if (b == 0)
+        return 1;
+    int x = (b % 2) ? a : 1;
+    int c = binExponentiation(a, b / 2);
+    return x * c * c;
+}
+```
+
+## 3.Реализовать нахождение количества маршрутов шахматного короля с препятствиями (где единица - это наличие препятствия, а ноль - свободная для хода клетка)
+
+в процессе 
+
+
