@@ -61,7 +61,7 @@ void exponentiation()
 
 ```
 
-# a) Рекурсивно.
+## a) Рекурсивно.
 
 ```sh
 int recExponentiation(int a, int b)
@@ -73,7 +73,7 @@ int recExponentiation(int a, int b)
 }
 ```
 
-# b) Рекурсивно, используя свойство чётности степени
+## b) Рекурсивно, используя свойство чётности степени
 
 ```sh
 int binExponentiation(int a, int b)
