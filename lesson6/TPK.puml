@@ -1,0 +1,33 @@
+  
+@startuml
+
+start
+
+: SIZE = 11 ]
+note right: const int SIZE = 11
+: arr[SIZE] = {0.0} ]
+note right: float array with sequence
+: calculation = 0.0 ]
+note right: float stores calculations according to the algorithm of each i element
+: i = 0 ]
+note right: int counter
+
+while (i < SIZE) is (yep)
+	: arr[i] <
+	note right: enter user data
+	: i = i + 1 ]
+endwhile (no)
+
+while (i >= 0) is (yep)
+	: calculation = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3) |
+	note right: algorithm formula
+	if (calc > 400) then (yep)
+		: result exceeds  400 >
+		note right: notifications > 400
+	endif
+	: i = i - 1 ]
+endwhile (no)
+
+stop
+
+@enduml
